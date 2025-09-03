@@ -13,7 +13,7 @@ packer {
 }
 
 source "amazon-ebs" "group2" {
-  ami_name      = "my-sonarqube-{{ timestamp }}"
+  ami_name      = "my-sonarqube-group2-{{ timestamp }}"
   instance_type = "t2.medium"
   region        = "us-east-1"
   source_ami    = "ami-0bbdd8c17ed981ef9"
@@ -22,9 +22,9 @@ source "amazon-ebs" "group2" {
   ssh_private_key_file = "~/.ssh/id_rsa"
   ami_regions = [
     "us-east-1",
-    # "us-east-2",
-    # "us-west-1",
-    # "us-west-2",
+    "us-east-2",
+    "us-west-1",
+    "us-west-2",
     ]
 }
 
